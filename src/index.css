@@ -1,5 +1,14 @@
+@import '~ionicons/dist/css/ionicons.css';
+@import '~font-awesome/css/font-awesome.css';
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap-theme.css';
+@import url('https://fonts.googleapis.com/css?family=Anton|Inconsolata|Source+Code+Pro');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  text-rendering: geometricPrecision;
+  text-align: center;
 }

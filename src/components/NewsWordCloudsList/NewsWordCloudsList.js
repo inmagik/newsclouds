@@ -24,6 +24,21 @@ const loadWordClouds = () => fetch(API_GIT_URL)
     // Fake word clouds...
     .concat([
       {
+        name: 'GioVaahaha',
+        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      },
+      {
+        name: 'GioVauwwuuw',
+        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      },
+      {
+        name: 'GioVaxxx',
+        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      },
+      {
         name: 'GioVa',
         image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
         txt: `${RAW_GIT_URL}/xxx/newstext.txt`
@@ -63,9 +78,9 @@ export default class NewsWordCloudsList extends Component {
     const wordCloudsList = this.getWordCloudsList()
 
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Newsclouds</h2>
+      <div className="NewsWordCloudsList">
+        <div className="NewsWordCloudsList-header">
+          <h1>NewsWordCloud <i className="NewsWordCloudsList-icon fa fa-newspaper-o" /></h1>
         </div>
 
         <Match pattern='wordclouds' render={({ pathname }) => (
@@ -97,9 +112,11 @@ export default class NewsWordCloudsList extends Component {
           }} />
         )} />
 
-        <div>
+        <div className="row">
           {wordCloudsList && wordCloudsList.map(wordCloud => (
-            <WordCloudPreview wordCloud={wordCloud} key={wordCloud.name} />
+            <div className="col-md-4" key={wordCloud.name}>
+              <WordCloudPreview wordCloud={wordCloud} />
+            </div>
           ))}
         </div>
       </div>
