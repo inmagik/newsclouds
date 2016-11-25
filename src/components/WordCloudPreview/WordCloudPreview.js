@@ -8,9 +8,9 @@ export const WordCloudPreview = ({ wordCloud }) => (
       <img src={wordCloud.image} />
     </Link>
     <div>
-      <i className="ion-md-battery-full" />
-      <div>{wordCloud.name}</div>
-      <div><a href={wordCloud.txt}>txt</a></div>
+      <div>26 Novembre 2016</div>
+      {/* <div>{wordCloud.name}</div>
+      <div><a href={wordCloud.txt}>txt</a></div> */}
     </div>
   </div>
 )

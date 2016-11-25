@@ -1,18 +1,19 @@
 import React from 'react'
-import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router'
+import { Router, Route, Redirect, hashHistory } from 'react-router'
+import Layout from './components/Layout'
+import Project from './components/Project'
 import NewsWordCloudsList from './components/NewsWordCloudsList'
 import WordCloudDetail from './components/WordCloudDetail'
-import About from './components/About'
-import './App.css';
+import './App.css'
 
 const App = () => (
   <Router history={hashHistory}>
-    <Route>
-      <Route path='about' component={About} />
+    <Route component={Layout}>
+      <Route path='project' component={Project} />
       <Route path='/' component={NewsWordCloudsList}>
         <Route path='wordclouds/:wordCloud' component={WordCloudDetail} />
       </Route>
-      <Redirect from="*" to="/" />
+      <Redirect from='*' to='/' />
     </Route>
   </Router>
 )
