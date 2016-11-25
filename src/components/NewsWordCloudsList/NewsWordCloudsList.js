@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Match, Redirect } from 'react-router'
+import { hashHistory } from 'react-router'
 import WordCloudPreview from '../WordCloudPreview'
-import WordCloudModal from '../WordCloudModal'
 import { makeCancelable } from '../../util'
 import './NewsWordCloudsList.css'
 
@@ -80,7 +79,7 @@ export default class NewsWordCloudsList extends Component {
   ))
 
   render() {
-    const { pathname } = this.props
+    const { params, children } = this.props
     const { wordClouds } = this.state
     const wordCloudsList = this.getWordCloudsList()
 
@@ -90,38 +89,7 @@ export default class NewsWordCloudsList extends Component {
           <h1>NewsWordCloud <i className="NewsWordCloudsList-icon fa fa-newspaper-o" /></h1>
         </div>
 
-        <Match pattern='wordclouds' render={({ pathname }) => (
-          <Match pattern={`${pathname}/:wordCloud`} render={({ params }) => {
-            // Wait word clouds to load...
-            if (!wordClouds) {
-              return null
-            }
-
-            // Invalid word cloud
-            if (typeof wordClouds.data[params.wordCloud] === 'undefined') {
-              console.log('FUck')
-              return <Redirect to={{ pathname: '/' }} />
-            }
-
-            const wordCloud = wordClouds.data[params.wordCloud]
-
-            // Calculate the next word cloud object
-            const index = wordClouds.names.indexOf(params.wordCloud)
-            const prevWordCloud = index > 0
-              ? wordClouds.data[wordClouds.names[index - 1]]
-              : null
-            const nextWordCloud = wordClouds.names.length > (index + 1)
-              ? wordClouds.data[wordClouds.names[index + 1]]
-              : null
-
-            // Show modal Yeah!
-            return <WordCloudModal
-              wordCloud={wordCloud}
-              prevWordCloud={prevWordCloud}
-              nextWordCloud={nextWordCloud}
-            />
-          }} />
-        )} />
+        {(wordClouds && children) && React.cloneElement(children, { wordClouds })}
 
         <div className="row">
           {wordCloudsList && wordCloudsList.map(wordCloud => (
