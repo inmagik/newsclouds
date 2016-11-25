@@ -1,0 +1,20 @@
+.NewsWordCloudsList-header {
+  padding: 30px;
+  margin-bottom: 80px;
+  color: linear-gradient(#088DA5, #20b2aa);
+  /*background: linear-gradient(to right, red, orange, yellow, green, blue);*/
+  background: #fff;
+}
+
+.NewsWordCloudsList-icon {
+  color: white;
+  background: black;
+  border-radius: 40px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.NewsWordCloudsList-logo {
+  text-align: left;
+
+}

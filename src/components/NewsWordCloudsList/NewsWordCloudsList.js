@@ -79,10 +79,6 @@ export default class NewsWordCloudsList extends Component {
 
     return (
       <div className="NewsWordCloudsList">
-        <div className="NewsWordCloudsList-header">
-          <h1>NewsWordCloud <i className="NewsWordCloudsList-icon fa fa-newspaper-o" /></h1>
-        </div>
-
         <Match pattern='wordclouds' render={({ pathname }) => (
           <Match pattern={`${pathname}/:wordCloud`} render={({ params }) => {
             // Wait word clouds to load...
@@ -114,7 +110,7 @@ export default class NewsWordCloudsList extends Component {
 
         <div className="row">
           {wordCloudsList && wordCloudsList.map(wordCloud => (
-            <div className="col-md-4" key={wordCloud.name}>
+            <div className="col-md-6" key={wordCloud.name}>
               <WordCloudPreview wordCloud={wordCloud} />
             </div>
           ))}
