@@ -1,20 +1,28 @@
-.NewsWordCloudsList-header {
-  padding: 30px;
-  margin-bottom: 80px;
-  color: linear-gradient(#088DA5, #20b2aa);
-  /*background: linear-gradient(to right, red, orange, yellow, green, blue);*/
-  background: #fff;
+.logo {
+  width:200px;
+  height: auto;
+  float: left;
+  padding: 20px;
+}
+ .row {
+   margin-bottom: 100px;
+ }
+
+.navbar-menu {
+  list-style: none;
 }
 
-.NewsWordCloudsList-icon {
-  color: white;
-  background: black;
-  border-radius: 40px;
-  padding: 10px;
-  font-size: 16px;
+.navbar-menu li {
+  display:inline-block;
+  float:left;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.NewsWordCloudsList-logo {
-  text-align: left;
-
+.navbar-menu li a {
+  display:block;
+  text-decoration: none;
+  line-height: 45px;
+  color: #666666;
 }
