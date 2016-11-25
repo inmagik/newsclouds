@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Match, Redirect } from 'react-router'
 import WordCloudPreview from '../WordCloudPreview'
 import WordCloudModal from '../WordCloudModal'
+import { makeCancelable } from '../../util'
 import './NewsWordCloudsList.css'
 
 const API_GIT_URL = 'https://api.github.com/repos/inmagik/newswordclouds/contents/dailyclouds?ref=stock'
@@ -26,28 +27,29 @@ const loadWordClouds = () => fetch(API_GIT_URL)
       {
         name: 'GioVaahaha',
         image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+        txt: '/n.txt'
+        // txt: `${RAW_GIT_URL}/xxx/newstext.txt`
       },
-      {
-        name: 'GioVauwwuuw',
-        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      },
-      {
-        name: 'GioVaxxx',
-        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      },
-      {
-        name: 'GioVa',
-        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      },
-      {
-        name: 'INGE',
-        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-        txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      }
+      // {
+      //   name: 'GioVauwwuuw',
+      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      // },
+      // {
+      //   name: 'GioVaxxx',
+      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      // },
+      // {
+      //   name: 'GioVa',
+      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      // },
+      // {
+      //   name: 'INGE',
+      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+      // }
     ])
   )
   // Flatty data structure
@@ -65,7 +67,12 @@ export default class NewsWordCloudsList extends Component {
   }
 
   componentWillMount() {
-    loadWordClouds().then(wordClouds => this.setState({ wordClouds }))
+    this.cancelableLoadWordClouds = makeCancelable(loadWordClouds())
+    this.cancelableLoadWordClouds.promise.then(wordClouds => this.setState({ wordClouds }))
+  }
+
+  componentWillUnmount() {
+    this.cancelableLoadWordClouds.cancel()
   }
 
   getWordCloudsList = () => (this.state.wordClouds && (
@@ -96,6 +103,9 @@ export default class NewsWordCloudsList extends Component {
 
             // Calculate the next word cloud object
             const index = wordClouds.names.indexOf(params.wordCloud)
+            const prevWordCloud = index > 0
+              ? wordClouds.data[wordClouds.names[index - 1]]
+              : null
             const nextWordCloud = wordClouds.names.length > (index + 1)
               ? wordClouds.data[wordClouds.names[index + 1]]
               : null
@@ -103,6 +113,7 @@ export default class NewsWordCloudsList extends Component {
             // Show modal Yeah!
             return <WordCloudModal
               wordCloud={wordCloud}
+              prevWordCloud={prevWordCloud}
               nextWordCloud={nextWordCloud}
             />
           }} />
