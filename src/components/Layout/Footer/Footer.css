@@ -1,0 +1,28 @@
+.footer-row {
+  margin-bottom: 0;
+}
+
+.footer-col {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+}
+
+.inmagik-logo {
+  width: 50px;
+  height: auto;
+  float: left;
+}
+
+.github-logo {
+  float: right;
+}
+
+ .copy {
+  font-size: 85%;
+  float: left;
+  line-height: 45px;
+  padding-left: 20px;
+ }

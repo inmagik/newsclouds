@@ -44,16 +44,51 @@ export default class WordCloudModal extends Component {
       <div className="WordCloudModal">
         <div className="WordCloudModal-content">
           <div className="clearfix">
-            <Link to='/'><i className="fa fa-close" /></Link>
-            {nextWordCloud && <Link className="pull-right" to={`/wordclouds/${nextWordCloud.name}`}>
-              <h3><i className="fa fa-arrow-right" /></h3>
-            </Link>}
-            {prevWordCloud && <Link className="pull-left" to={`/wordclouds/${prevWordCloud.name}`}>
-              <h3><i className="fa fa-arrow-left" /></h3>
-            </Link>}
+            <h5 className="ModalDate"><i className="fa fa-file-text" /> 26 Novembre 2016</h5>
+            <Link to='/'><h5 className="CloseButton"><i className="fa fa-close" /></h5></Link>
           </div>
-          <img height="600px" src={wordCloud.image} />
-          {text && <div>{text}</div>}
+          <div className="clearfix">
+            <h1 className="ModalTitle">NewsClouds</h1>
+          </div>
+          {prevWordCloud && <Link className="arrow-left" to={`/wordclouds/${prevWordCloud.name}`}>
+            <h3><i className="fa fa-arrow-left" /></h3>
+          </Link>}
+          <div className="WordCloudModal-image">
+            <img height="500px" src={wordCloud.image} />
+          </div>
+          {/*<div className="WordCloudModal-text">
+            <h4 className="WordCloudModal-text-title">text <i className="fa fa-file-text" /></h4>
+            <div className="WordCloudModal-text-content">
+            {text && <div>{text}</div>}
+            </div>
+          </div> */}
+          <div className="ImageSources">
+            <h4>Fonti dell'immagine:</h4>
+            <ul>
+              <li>la Repubblica</li>
+              <li>Corriere della Sera</li>
+              <li>il Fatto Quotidiano</li>
+              <li>ANSA</li>
+              <li>La Stampa</li>
+              <li>Il Mattino</li>
+              <li>Il Messaggero</li>
+              <li>il Giornale</li>
+              <li>Libero</li>
+              <li>Italia Oggi</li>
+              <li>Il Gazzettino</li>
+              <li>Il Secolo XIX</li>
+              <li>Il Sole 24 ORE</li>
+              <li>IL FOGLIO</li>
+            </ul>
+          </div>
+          <div className="SocialButtons">
+            <button><i className="fa fa-twitter" /></button>
+            <button><i className="fa fa-facebook" /></button>
+            <button><i className="fa fa-cloud-download" /></button>
+          </div>
+          {nextWordCloud && <Link className="arrow-right" to={`/wordclouds/${nextWordCloud.name}`}>
+            <h3><i className="fa fa-arrow-right" /></h3>
+          </Link>}
         </div>
       </div>
     )
