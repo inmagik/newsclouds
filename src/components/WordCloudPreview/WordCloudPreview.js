@@ -4,7 +4,7 @@ import './WordCloudPreview.css'
 
 export const WordCloudPreview = ({ wordCloud }) => (
   <div className="WordCloudPreview">
-    <Link to={`/wordclouds/${wordCloud.name}`}>
+    <Link to={`/clouds/${wordCloud.name}`}>
       <img src={wordCloud.image} />
     </Link>
     <div>

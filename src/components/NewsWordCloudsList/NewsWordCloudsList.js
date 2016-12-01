@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { hashHistory } from 'react-router'
 import WordCloudPreview from '../WordCloudPreview'
 import { makeCancelable } from '../../util'
 import './NewsWordCloudsList.css'

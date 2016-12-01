@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { hashHistory } from 'react-router'
+import { browserHistory } from 'react-router'
 import WordCloudModal from './WordCloudModal'
 
 export default class WordCloudDetail extends Component {
@@ -15,7 +15,7 @@ export default class WordCloudDetail extends Component {
 
   redirectWhenNotFound(wordCloudName) {
     if (typeof this.props.wordClouds.data[wordCloudName] === 'undefined') {
-      hashHistory.replace('/')
+      browserHistory.replace('/')
     }
   }
 

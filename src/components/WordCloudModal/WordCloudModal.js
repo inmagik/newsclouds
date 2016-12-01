@@ -60,10 +60,10 @@ export default class WordCloudModal extends Component {
           <div className="clearfix">
           <h5 className="ModalDate"><i className="fa fa-file-text" /> 26 Novembre 2016</h5>
           </div>
-          {prevWordCloud && <Link className="arrow-left" to={`/wordclouds/${prevWordCloud.name}`}>
+          {prevWordCloud && <Link className="arrow-left" to={`/clouds/${prevWordCloud.name}`}>
             <h3><i className="fa fa-arrow-left" /></h3>
           </Link>}
-          {nextWordCloud && <Link className="arrow-right" to={`/wordclouds/${nextWordCloud.name}`}>
+          {nextWordCloud && <Link className="arrow-right" to={`/clouds/${nextWordCloud.name}`}>
             <h3><i className="fa fa-arrow-right" /></h3>
           </Link>}
           <div className="WordCloudModal-image">
