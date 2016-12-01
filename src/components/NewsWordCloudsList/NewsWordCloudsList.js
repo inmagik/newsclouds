@@ -83,7 +83,6 @@ export default class NewsWordCloudsList extends Component {
     const { wordClouds } = this.state
     const wordCloudsList = this.getWordCloudsList()
 
-
     return (
       <div className="NewsWordCloudsList">
         {(wordClouds && children) && React.cloneElement(children, { wordClouds })}
@@ -95,7 +94,6 @@ export default class NewsWordCloudsList extends Component {
             </div>
           ))}
         </div>
-        <button onclick={this.changeColor}/>
       </div>
     )
   }

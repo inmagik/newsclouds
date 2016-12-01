@@ -4,7 +4,6 @@ import Layout from './components/Layout'
 import Project from './components/Project'
 import NewsWordCloudsList from './components/NewsWordCloudsList'
 import WordCloudDetail from './components/WordCloudDetail'
-import './App.css'
 
 const App = () => (
   <Router history={browserHistory}>
@@ -18,4 +17,4 @@ const App = () => (
   </Router>
 )
 
-export default App;
+export default App
