@@ -78,10 +78,12 @@ export default class NewsWordCloudsList extends Component {
     this.state.wordClouds.names.map(name => this.state.wordClouds.data[name])
   ))
 
+
   render() {
     const { params, children } = this.props
     const { wordClouds } = this.state
     const wordCloudsList = this.getWordCloudsList()
+
 
     return (
       <div className="NewsWordCloudsList">
@@ -94,6 +96,7 @@ export default class NewsWordCloudsList extends Component {
             </div>
           ))}
         </div>
+        <button onclick={this.changeColor}/>
       </div>
     )
   }

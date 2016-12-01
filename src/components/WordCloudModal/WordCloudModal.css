@@ -15,15 +15,13 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #000;
-  width: 80%;
+  width: 60%;
   text-align: center;
   display: block;
   overflow: auto;
 }
 
 .WordCloudModal-image {
-  float: left;
-  border: 0.2px solid #000;
   margin-top: 15px;
 }
 
@@ -49,15 +47,6 @@
   height: 460px;
 } */
 
-/* The Close Button */
-.CloseButton {
-  float: right;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  font-size: 28px;
-  color: #000;
-}
-
 .arrow-left {
   float: left;
   padding-top: 200px;
@@ -66,14 +55,12 @@
 
 .arrow-right {
   float: right;
+  padding-top: 200px;
 }
 
 /* The Close Button */
 .CloseButton {
-  float: right;
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-  font-size: 28px;
+  font-size: 30px;
   color: #000;
 }
 
@@ -94,9 +81,9 @@
 
 .ModalDate {
   float: left;
+  margin-top: 0px;
   padding-bottom: 10px;
   margin-bottom: 0px;
-  padding-bottom: 0px;
 }
 
 .ImageSources {
@@ -111,9 +98,18 @@
   list-style: none;
 }
 
-.SocialButtons {
-  font-size: 30px;
-  margin-top: 30px;
+.SocialButtons2 button {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 100%;
+  border: 0.5px solid #000;
+  box-shadow: 3px 3px 5px #888888;
+}
+
+.SocialButtons2 {
+  font-size: 13px;
 }
 
 .SocialButtons button {
@@ -125,3 +121,19 @@
   border: 0.5px solid #000;
   box-shadow: 3px 3px 5px #888888;
 }
+
+.SocialButtons {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+ .Logo {
+   margin-bottom: 0px;
+   padding-bottom: 0px;
+   height: 33px;
+   width: 35px;
+ }
+ .head {
+   height: 50px;
+   margin: 0px;
+ }
