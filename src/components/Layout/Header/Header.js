@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 import './Header.css'
-import logo from './NewsClouds_logo.png'
+import logo from './DailyClouds-logo.png'
 
 const Header = () => (
   <div className="Header row">

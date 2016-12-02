@@ -31,12 +31,12 @@
    .WordCloudModal-content {
      background-color: #fff;
      margin: auto;
-     padding: 20px;
      border: 1px solid #000;
      width: 100%;
      text-align: center;
      display: block;
      overflow: auto;
+     height: 100%;
    }
 
  }
@@ -51,7 +51,23 @@
 
 .WordCloudModal-image img{
   max-height: 100%;
-  width:auto;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 800px) {
+   .WordCloudModal-image img{
+     padding: 5px;
+     margin: auto;
+   }
+}
+
+@media (max-width: 800px) {
+   .WordCloudModal-image {
+     position: relative;
+     top: 3%;
+   }
 }
 
 .WordCloudModal-arrow-left {
@@ -70,6 +86,16 @@
   z-index: 10000000;
   color: #000;
   font-size: 40px;
+}
+
+.WordCloudModal-arrow-right:hover,
+.WordCloudModal-arrow-right:focus {
+  color: #c3c3c3;
+}
+
+.WordCloudModal-arrow-left:hover,
+.WordCloudModal-arrow-left:focus {
+  color: #c3c3c3;
 }
 
 /* The Close Button */
@@ -94,6 +120,12 @@
   margin: 0px;
   font-size: 40px;
   font-weight: 900;
+}
+
+@media (max-width: 800px) {
+  .ModalTitle {
+    font-size: 30px;
+  }
 }
 
 .ModalDate {
