@@ -1,8 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Create React App static used by Flask
-server/static
-
 # dependencies
 node_modules
 
