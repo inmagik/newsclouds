@@ -44,30 +44,25 @@ export default class WordCloudModal extends Component {
     const { text } = this.state
     return (
       <div className="WordCloudModal">
+      {prevWordCloud && <Link className="arrow-left" to={`/wordclouds/${prevWordCloud.name}`}>
+        <h3><i className="fa fa-arrow-left" /></h3>
+      </Link>}
+      {nextWordCloud && <Link className="arrow-right" to={`/wordclouds/${nextWordCloud.name}`}>
+        <h3><i className="fa fa-arrow-right" /></h3>
+      </Link>}
         <div className="WordCloudModal-content">
-          <div className="row head">
-            <img src={inmagik} className="Logo col-md-1"/>
-            <div className="SocialButtons2 col-md-10">
-              <button><i className="fa fa-twitter" /></button>
-              <button><i className="fa fa-facebook" /></button>
-              <button><i className="fa fa-cloud-download" /></button>
+          <div className="ModalHeader">
+            <div className="clearfix">
+            <img src={inmagik} className="Logo pull-left"/>
+            <h5 className="ModalDate pull-left"><i className="fa fa-file-text" /> 26 Novembre 2016</h5>
+            <Link to='/'><h5 className="CloseButton pull-right"><i className="fa fa-close" /></h5></Link>
             </div>
-            <Link to='/'><h5 className="CloseButton col-md-1"><i className="fa fa-close" /></h5></Link>
-          </div>
-          <div className="clearfix">
+            <div>
             <h1 className="ModalTitle">The Daily Clouds</h1>
+            </div>
           </div>
-          <div className="clearfix">
-          <h5 className="ModalDate"><i className="fa fa-file-text" /> 26 Novembre 2016</h5>
-          </div>
-          {prevWordCloud && <Link className="arrow-left" to={`/wordclouds/${prevWordCloud.name}`}>
-            <h3><i className="fa fa-arrow-left" /></h3>
-          </Link>}
-          {nextWordCloud && <Link className="arrow-right" to={`/wordclouds/${nextWordCloud.name}`}>
-            <h3><i className="fa fa-arrow-right" /></h3>
-          </Link>}
           <div className="WordCloudModal-image">
-            <img height="400px" src={wordCloud.image} />
+            <img width="100%" src={wordCloud.image} />
           </div>
           {/*<div className="WordCloudModal-text">
             <h4 className="WordCloudModal-text-title">text <i className="fa fa-file-text" /></h4>
@@ -94,7 +89,7 @@ export default class WordCloudModal extends Component {
               <li>IL FOGLIO</li>
             </ul>
           </div> */}
-          <div className="SocialButtons">
+          <div className="SocialButtons2 col-md-10">
             <button><i className="fa fa-twitter" /></button>
             <button><i className="fa fa-facebook" /></button>
             <button><i className="fa fa-cloud-download" /></button>

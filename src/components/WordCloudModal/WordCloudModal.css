@@ -13,16 +13,45 @@
 .WordCloudModal-content {
   background-color: #fff;
   margin: auto;
-  padding: 20px;
+  padding: 0px;
   border: 1px solid #000;
-  width: 60%;
+  width: 760px;
+  height: 100%;
+  max-height: 100%;
   text-align: center;
   display: block;
   overflow: auto;
+  position: relative;
 }
+ @media (max-width: 800px) {
+   .WordCloudModal-content {
+     background-color: #fff;
+     margin: auto;
+     padding: 20px;
+     border: 1px solid #000;
+     width: 100%;
+     text-align: center;
+     display: block;
+     overflow: auto;
+   }
+
+ }
 
 .WordCloudModal-image {
+  position: absolute;
+  top:180px;
+  background-color: red;
+  bottom: 0px;
+  width:100%;
   margin-top: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.WordCloudModal-image img{
+
+  max-height: 100%;
+  width:auto;
 }
 
   /*.WordCloudModal-text {
@@ -48,20 +77,26 @@
 } */
 
 .arrow-left {
-  float: left;
-  padding-top: 200px;
-  margin-right: 20px;
+  position: absolute;
+  top:50%;
+  left:10px;
+  z-index: 10000000;
 }
 
 .arrow-right {
-  float: right;
-  padding-top: 200px;
+  position: absolute;
+  top:50%;
+  right:10px;
+  z-index: 10000000;
+
 }
 
 /* The Close Button */
 .CloseButton {
+  float: right;
   font-size: 30px;
   color: #000;
+  top: 0;
 }
 
 .CloseButton:hover,
@@ -74,28 +109,12 @@
 .ModalTitle {
   font-family: 'Anton', sans-serif;
   border-bottom: 4px double #000;
-  border-top: 4px double #000;
   padding: 10px;
   margin-top: 10px;
 }
 
 .ModalDate {
-  float: left;
-  margin-top: 0px;
-  padding-bottom: 10px;
-  margin-bottom: 0px;
-}
-
-.ImageSources {
-  margin-top: 15px;
-}
-
-.ImageSources h4 {
-  font-weight: 900;
-}
-
-.ImageSources li {
-  list-style: none;
+  padding-left: 10px;
 }
 
 .SocialButtons2 button {
@@ -110,6 +129,7 @@
 
 .SocialButtons2 {
   font-size: 13px;
+  bottom: 5px;
 }
 
 .SocialButtons button {
@@ -128,12 +148,17 @@
 }
 
  .Logo {
-   margin-bottom: 0px;
-   padding-bottom: 0px;
-   height: 33px;
+   left: 0;
+   height: 35px;
    width: 35px;
  }
- .head {
-   height: 50px;
-   margin: 0px;
+
+ .ModalHeader {
+   width: 100%;
+   padding: 5px;
+   height: 100px;
  }
+
+.clearfix {
+  width: 100%;
+}
