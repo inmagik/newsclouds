@@ -29,7 +29,7 @@ jsdom.env('./build/index.html', function (err, window) {
   var rawHtml = window.document.documentElement.outerHTML;
 
   // Write app html
-  fs.writeFile('./server/templates/app.html', rawHtml);
+  fs.writeFile('./server/templates/base.html', rawHtml);
 
   // Copy static
   ncp('./build/static', './server/static');

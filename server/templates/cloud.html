@@ -1,11 +1,11 @@
-{% extends "app.html" %}
+{% extends "base.html" %}
 
 {% block head %}
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@flickr" />
-  <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
-  <meta name="twitter:description" content="View the album on Flickr." />
-  <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+  <meta name="twitter:site" content="@inmagiklabs" />
+  <meta name="twitter:title" content="Daily Cloud for {{ date_en }}" />
+  <meta name="twitter:description" content="#dailyclouds: #news from top #italian newspapers in a #wordcloud for {{ date_en }} by @inmagiklabs" />
+  <meta name="twitter:image" content="{{ image }}" />
   {{ super() }}
 {% endblock %}
 
