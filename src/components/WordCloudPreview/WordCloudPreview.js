@@ -7,7 +7,7 @@ export const WordCloudPreview = ({ wordCloud }) => (
     <Link to={`/clouds/${wordCloud.name}`}>
       <img src={wordCloud.image} />
     </Link>
-    <div>
+    <div className="WordCloudPreview-bottom-text">
       <div>26 Novembre 2016</div>
       {/* <div>{wordCloud.name}</div>
       <div><a href={wordCloud.txt}>txt</a></div> */}

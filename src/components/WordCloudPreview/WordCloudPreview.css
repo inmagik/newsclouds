@@ -1,8 +1,13 @@
 .WordCloudPreview {
-  padding: 40px;
+  padding: 30px;
 }
 
 .WordCloudPreview img {
-  height: 250px;
+  max-height: 350px;
   /*height: auto;*/
+}
+
+.WordCloudPreview-bottom-text {
+  padding-top: 10px;
+  font-size: 18px;
 }
