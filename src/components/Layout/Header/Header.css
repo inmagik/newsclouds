@@ -1,16 +1,17 @@
-.logo {
+.Header {
+   margin-bottom: 50px;
+}
+
+.Header-logo {
   float: left;
   padding: 20px;
 }
- .row {
-   margin-bottom: 100px;
- }
 
-.navbar-menu {
+.Header-navbar-menu {
   list-style: none;
 }
 
-.navbar-menu li {
+.Header-navbar-menu li {
   display:inline-block;
   float:left;
   padding-top: 20px;
@@ -18,7 +19,7 @@
   padding-right: 10px;
 }
 
-.navbar-menu li a {
+.Header-navbar-menu li a {
   display:block;
   text-decoration: none;
   line-height: 45px;

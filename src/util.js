@@ -1,3 +1,10 @@
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
+
+export const formatDate = date => {
+  const [ d, m, y ] = [ date.format('D'), date.format('MMMM'), date.format('YYYY') ]
+  return `${d} ${capitalize(m)} ${y}`
+}
+
 export const makeCancelable = (promise) => {
   let hasCanceled_ = false
 

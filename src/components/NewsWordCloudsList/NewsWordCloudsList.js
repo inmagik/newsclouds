@@ -1,34 +1,35 @@
 import React, { Component } from 'react'
-import { hashHistory } from 'react-router'
 import WordCloudPreview from '../WordCloudPreview'
 import { makeCancelable } from '../../util'
+import moment from 'moment'
 import './NewsWordCloudsList.css'
 
-const API_GIT_URL = 'https://api.github.com/repos/inmagik/newswordclouds/contents/dailyclouds?ref=stock'
-const RAW_GIT_URL = 'https://raw.githubusercontent.com/inmagik/newswordclouds/stock/dailyclouds'
+const API_URL = 'https://api.github.com/repos/inmagik/newsclouds-stock/contents'
+const CONTENT_URL = 'http://inmagik.github.io/newsclouds-stock'
 
 const dataReducer = contents => contents.reduce((data, content) => ({
   ...data,
   [content.name]: content
 }), {})
 
-const loadWordClouds = () => fetch(API_GIT_URL)
+const loadWordClouds = () => fetch(API_URL)
   .then(response => response.json())
   // Map to word cloud object
   .then(contents => contents.map(({ name }) => ({
     name,
-    image: `${RAW_GIT_URL}/${name}/newsimage.jpg`,
-    txt: `${RAW_GIT_URL}/${name}/newstext.txt`
+    date: moment(name, 'YYYYMMDD'),
+    image: `${CONTENT_URL}/${name}/${name}.image.png`,
+    txt: `${CONTENT_URL}/${name}/newstext.txt`
     // previewImage,
   }))
     // Fake word clouds...
-    .concat([
-      {
-        name: 'GioVaahaha',
-        image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-        txt: '/n.txt'
-        // txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      },
+    // .concat([
+    //   {
+    //     name: 'GioVaahaha',
+    //     image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
+    //     txt: '/n.txt'
+    //     // txt: `${RAW_GIT_URL}/xxx/newstext.txt`
+    //   },
       // {
       //   name: 'GioVauwwuuw',
       //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
@@ -49,7 +50,7 @@ const loadWordClouds = () => fetch(API_GIT_URL)
       //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
       //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
       // }
-    ])
+    // ])
   )
   // Flatty data structure
   .then(contents => ({
@@ -84,7 +85,6 @@ export default class NewsWordCloudsList extends Component {
     const { wordClouds } = this.state
     const wordCloudsList = this.getWordCloudsList()
 
-
     return (
       <div className="NewsWordCloudsList">
         {(wordClouds && children) && React.cloneElement(children, { wordClouds })}
@@ -96,7 +96,6 @@ export default class NewsWordCloudsList extends Component {
             </div>
           ))}
         </div>
-        <button onclick={this.changeColor}/>
       </div>
     )
   }

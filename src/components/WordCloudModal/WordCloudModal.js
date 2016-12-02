@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import { makeCancelable } from '../../util'
+import { makeCancelable, formatDate } from '../../util'
 import './WordCloudModal.css'
 import inmagik from '../Layout/Footer/inmagik_circle_shadow.png'
 
@@ -44,17 +44,17 @@ export default class WordCloudModal extends Component {
     const { text } = this.state
     return (
       <div className="WordCloudModal">
-      {prevWordCloud && <Link className="arrow-left" to={`/wordclouds/${prevWordCloud.name}`}>
+      {prevWordCloud && <Link className="arrow-left" to={`/clouds/${prevWordCloud.name}`}>
         <h3><i className="fa fa-arrow-left" /></h3>
       </Link>}
-      {nextWordCloud && <Link className="arrow-right" to={`/wordclouds/${nextWordCloud.name}`}>
+      {nextWordCloud && <Link className="arrow-right" to={`/clouds/${nextWordCloud.name}`}>
         <h3><i className="fa fa-arrow-right" /></h3>
       </Link>}
         <div className="WordCloudModal-content">
           <div className="ModalHeader">
             <div className="clearfix">
             <img src={inmagik} className="Logo pull-left"/>
-            <h5 className="ModalDate pull-left"><i className="fa fa-file-text" /> 26 Novembre 2016</h5>
+            <h5 className="ModalDate pull-left"><i className="fa fa-file-text" /> {formatDate(wordCloud.date)}</h5>
             <Link to='/'><h5 className="CloseButton pull-right"><i className="fa fa-close" /></h5></Link>
             </div>
             <div>

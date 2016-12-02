@@ -1,16 +1,15 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import { formatDate } from '../../util'
 import './WordCloudPreview.css'
 
 export const WordCloudPreview = ({ wordCloud }) => (
   <div className="WordCloudPreview">
-    <Link to={`/wordclouds/${wordCloud.name}`}>
+    <Link to={`/clouds/${wordCloud.name}`}>
       <img src={wordCloud.image} />
     </Link>
-    <div>
-      <div>26 Novembre 2016</div>
-      {/* <div>{wordCloud.name}</div>
-      <div><a href={wordCloud.txt}>txt</a></div> */}
+    <div className="WordCloudPreview-bottom-text">
+      <div>{formatDate(wordCloud.date)}</div>
     </div>
   </div>
 )

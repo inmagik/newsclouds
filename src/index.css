@@ -2,7 +2,8 @@
 @import '~font-awesome/css/font-awesome.css';
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~bootstrap/dist/css/bootstrap-theme.css';
-@import url('https://fonts.googleapis.com/css?family=Anton|Inconsolata|Source+Code+Pro');
+/* FIXME: ??? */
+/*@import url('https://fonts.googleapis.com/css?family=Anton|Inconsolata|Source+Code+Pro');*/
 
 body {
   margin: 0;

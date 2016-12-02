@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "jsdom": "^9.8.3",
+    "ncp": "^2.0.0",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "ionicons": "^3.0.0",
+    "moment": "^2.17.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-router": "^3.0.0"
@@ -16,6 +19,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "flask": "node bin/flask",
+    "build:flask": "npm run build && npm run flask",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
