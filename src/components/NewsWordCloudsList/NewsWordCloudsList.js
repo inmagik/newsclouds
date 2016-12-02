@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import WordCloudPreview from '../WordCloudPreview'
 import { makeCancelable } from '../../util'
+import moment from 'moment'
 import './NewsWordCloudsList.css'
 
 const API_URL = 'https://api.github.com/repos/inmagik/newsclouds-stock/contents'
@@ -16,6 +17,7 @@ const loadWordClouds = () => fetch(API_URL)
   // Map to word cloud object
   .then(contents => contents.map(({ name }) => ({
     name,
+    date: moment(name, 'YYYYMMDD'),
     image: `${CONTENT_URL}/${name}/${name}.image.png`,
     txt: `${CONTENT_URL}/${name}/newstext.txt`
     // previewImage,

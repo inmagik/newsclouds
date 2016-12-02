@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import { makeCancelable } from '../../util'
+import { makeCancelable, formatDate } from '../../util'
 import './WordCloudModal.css'
 import inmagik from '../Layout/Footer/inmagik_circle_shadow.png'
 
@@ -58,7 +58,7 @@ export default class WordCloudModal extends Component {
             <h1 className="ModalTitle">The Daily Clouds</h1>
           </div>
           <div className="clearfix">
-          <h5 className="ModalDate"><i className="fa fa-file-text" /> 26 Novembre 2016</h5>
+          <h5 className="ModalDate"><i className="fa fa-file-text" /> {formatDate(wordCloud.date)}</h5>
           </div>
           {prevWordCloud && <Link className="arrow-left" to={`/clouds/${prevWordCloud.name}`}>
             <h3><i className="fa fa-arrow-left" /></h3>
