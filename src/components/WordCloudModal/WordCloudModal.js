@@ -23,13 +23,13 @@ export default class WordCloudModal extends Component {
     const { wordCloud, prevWordCloud, nextWordCloud } = this.props
     return (
       <div className="WordCloudModal">
+      <div className="WordCloudModal-content">
           {prevWordCloud && <Link className="WordCloudModal-arrow-left" to={`/clouds/${prevWordCloud.name}`}>
               <h3><i className="fa fa-chevron-left"/></h3>
           </Link>}
           {nextWordCloud && <Link className="WordCloudModal-arrow-right" to={`/clouds/${nextWordCloud.name}`}>
               <h3><i className="fa fa-chevron-right"/></h3>
           </Link>}
-          <div className="WordCloudModal-content">
               <div className="ModalHeader">
                   <div className="clearfix">
                       <img src={inmagik} className="WordCloudModal-Logo pull-left"/>
