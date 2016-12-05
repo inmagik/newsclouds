@@ -1,0 +1,77 @@
+APP_NAME: "dailyclouds"
+GIT_REPO : "https://github.com/inmagik/newsclouds"
+
+BASE_FOLDER : "/srv"
+SERVER_APP_SYSTEM_USER : "www-data"
+
+APP_BASE_FOLDER : "{{BASE_FOLDER}}/{{APP_NAME}}"
+APP_VENV_PATH : "{{BASE_FOLDER}}/{{APP_NAME}}/env"
+
+APP_UWSGI_INI_PATH : "{{BASE_FOLDER}}/{{APP_NAME}}/nginx/uwsgi.ini"
+
+# ----- BACKEND CONFIG
+
+
+#BACKEND_APP_PROJECT_NAME : "amministrami_srv"
+#BACKEND_APP_NAME : "amministrami"
+#
+#BACKEND_APP_WSGI_PARAMS_PATH : "{{BASE_FOLDER}}/{{BACKEND_APP_NAME}}/nginx/uwsgi_params"
+#BACKEND_APP_SOCKET_PATH : "{{BASE_FOLDER}}/{{BACKEND_APP_NAME}}/nginx/socket.sock"
+#
+#BACKEND_APP_DOMAIN : "188.166.143.209"
+#BACKEND_APP_MEDIA_FOLDER: "{{BASE_FOLDER}}/{{BACKEND_APP_NAME}}/media"
+#BACKEND_APP_STATIC_FOLDER: "{{BASE_FOLDER}}/{{BACKEND_APP_NAME}}/static"
+#BACKEND_APP_UWSGI_INI_PATH : "{{BASE_FOLDER}}/{{BACKEND_APP_NAME}}/nginx/uwsgi.ini"
+#
+## ----- FRONTEND CONFIG
+#
+##FRONTEND_APP_NAME: "booking-frontend"
+##FRONTEND_APP_DOMAIN: "booking.qando.it"
+##FRONTEND_GIT_REPO : "https://github.com/qandobooking/booking-frontend"
+##FRONTEND_APP_BASE_FOLDER : "{{BASE_FOLDER}}/{{FRONTEND_APP_NAME}}"
+#FRONTEND_APP_SERVE_FOLDER : "{{FRONTEND_APP_BASE_FOLDER}}/serve"
+#FRONTEND_DEMO_SERVE_FOLDER : "{{BASE_FOLDER}}/demo-integration"
+#
+#
+## ----- POSTGRES CONFIG
+#
+#PG_DATABASE_USER : "amministrami_srv"
+#PG_DATABASE_PASSWORD : "amministrami_srv"
+#PG_DATABASE_HOST : ""
+#PG_DATABASE_PORT : ""
+#
+#
+#postgresql_version: 9.5
+#postgresql_ext_install_contrib: yes
+#postgresql_ext_install_dev_headers: yes
+#postgresql_ext_install_postgis: yes
+#postgresql_ext_postgis_version: "2.2"
+#
+#
+##tuned via http://pgtune.leopard.in.ua/ for 1GB RAM
+#postgresql_max_connections : 200
+#postgresql_shared_buffers : 256MB
+#postgresql_effective_cache_size : 768MB
+#postgresql_work_mem : 1310kB
+#postgresql_maintenance_work_mem : 64MB
+#postgresql_min_wal_size : 1GB
+#postgresql_max_wal_size : 2GB
+#postgresql_checkpoint_completion_target : 0.7
+#postgresql_wal_buffers : 7864kB
+#postgresql_default_statistics_target : 100
+#
+#
+#
+#postgresql_users :
+#    - name: "{{ PG_DATABASE_USER }}"
+#      pass: "{{ PG_DATABASE_PASSWORD }}"
+#
+#postgresql_databases :
+#    - name: "{{ PG_DATABASE_USER }}"
+#      owner: "{{ PG_DATABASE_USER }}"
+#      gis: yes
+#      #hstore: yes
+#
+#postgresql_user_privileges:
+#  - name: "{{ PG_DATABASE_USER }}"
+#    role_attr_flags: "CREATEDB,SUPERUSER"

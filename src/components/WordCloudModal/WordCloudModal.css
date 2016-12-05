@@ -73,19 +73,33 @@
 .WordCloudModal-arrow-left {
   position: absolute;
   top:50%;
-  left:70px;
+  left:50px;
   z-index: 10000000;
-  color: #000;
+  color: white;
   font-size: 40px;
+}
+
+@media (max-width: 800px) {
+  .WordCloudModal-arrow-left {
+    top: 300px;
+    left: 15px;
+  }
 }
 
 .WordCloudModal-arrow-right {
   position: absolute;
   top:50%;
-  right:70px;
+  right:50px;
   z-index: 10000000;
-  color: #000;
+  color: #fff;
   font-size: 40px;
+}
+
+@media (max-width: 800px) {
+  .WordCloudModal-arrow-right {
+    top: 300px;
+    right: 15px;
+  }
 }
 
 .WordCloudModal-arrow-right:hover,

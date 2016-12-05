@@ -34,11 +34,12 @@ def wordcloud(cloud):
         return 'Unable to contact clouds API', 500
 
     # Build meta tags for socials
+    url = request.url
     image = "http://inmagik.github.io/newsclouds-stock/%s/%s.image.png" % (cloud, cloud)
     date_it = cloud_date(cloud, locale_code="IT_it")
     date_en = cloud_date(cloud, locale_code="EN_us", date_format="{d:%B}, {d.day}, {d:%Y}")
 
-    return render_template("cloud.html", image=image, date_en=date_en, date_it=date_it)
+    return render_template("cloud.html", image=image, date_en=date_en, date_it=date_it, url=url)
 
 @app.route('/favicon.ico')
 @app.route('/asset-manifest.json')

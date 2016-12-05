@@ -1,0 +1,47 @@
+---
+
+- name: template nginx
+  template: src=nginx.conf dest=/etc/nginx/sites-enabled/{{BACKEND_APP_NAME}}.conf
+  #template: src=nginx_ssl.conf dest=/etc/nginx/sites-enabled/{{BACKEND_APP_NAME}}.conf
+
+- name: template uwsgi.ini
+  template: src=uwsgi.ini dest={{BACKEND_APP_UWSGI_INI_PATH}}
+
+- name: template supervisor
+  template: src=supervisor.conf dest=/etc/supervisor/conf.d/{{BACKEND_APP_NAME}}.conf
+
+- name: clone repo
+  git: repo={{BACKEND_GIT_REPO}} dest={{BACKEND_APP_BASE_FOLDER}}/code force=true accept_hostkey=yes
+
+- name: setup virtualenv
+  pip: requirements={{BACKEND_APP_BASE_FOLDER}}/code/requirements.txt virtualenv={{BACKEND_APP_VENV_PATH}}
+
+- name: template localsettings
+  template: src=localsettings.py dest={{ BACKEND_APP_BASE_FOLDER}}/code/{{BACKEND_APP_PROJECT_NAME}}/{{BACKEND_APP_PROJECT_NAME}}/localsettings.py
+
+# Run syncdb on the application
+- name: migrate django app
+  django_manage: >
+    command=migrate
+    app_path={{ BACKEND_APP_BASE_FOLDER }}/code/{{BACKEND_APP_PROJECT_NAME}}
+    virtualenv={{ BACKEND_APP_VENV_PATH }}
+
+- name: collectstatic
+  django_manage: >
+    command=collectstatic
+    app_path={{ BACKEND_APP_BASE_FOLDER }}/code/{{BACKEND_APP_PROJECT_NAME}}
+    virtualenv={{ BACKEND_APP_VENV_PATH }}
+
+#should go to handlers?
+
+- name: supervisor restart
+  service: name=supervisor state=started
+
+- name: supervisorctl present
+  supervisorctl: name={{ BACKEND_APP_NAME }} state=present
+
+- name: supervisorctl present
+  supervisorctl: name={{ BACKEND_APP_NAME }} state=restarted
+
+- name: restart nginx
+  service: name=nginx state=restarted

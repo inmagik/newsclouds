@@ -6,7 +6,12 @@
   <meta name="twitter:title" content="Daily Cloud for {{ date_en }}" />
   <meta name="twitter:description" content="#dailyclouds: #news from top #italian newspapers in a #wordcloud for {{ date_en }} by @inmagiklabs" />
   <meta name="twitter:image" content="{{ image }}" />
+  <meta property="og:url" content="{{ url }}" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Le notizie di oggi {{ date_it }}" />
+  <meta property="og:description" content="Daily Clouds: Le notizie di oggi, {{ date_it }} dei principali giornali italiani in una #wordcloud" />
+  <meta property="og:image" content="{{ image }}" />
   {{ super() }}
 {% endblock %}
 
-{% block title %}Newsclouds{% endblock %}
+{% block title %}Daily Clouds{% endblock %}

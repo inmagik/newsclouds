@@ -6,8 +6,8 @@ import Octocat from './Octocat_circle.png'
 const Footer = () => (
   <div className="footer-row">
    <div className="col-md-10 col-md-offset-1">
-     <img src={inmagik} className="inmagik-logo"/>
-     <img src={Octocat} className="github-logo"/>
+     <a href="https://inmagik.com"><img src={inmagik} className="inmagik-logo"/></a>
+     <a href="https://github.com/inmagik"><img src={Octocat} className="github-logo"/></a>
      <p className="copy">Copyright © 2016 INMAGIK srl - All rights reserved.</p>
    </div>
   </div>
