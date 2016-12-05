@@ -14,8 +14,9 @@ def is_valid_cloud(cloud):
     Check if given cloud is valid
     """
     # TODO: Cache it!
-    r = requests.get('https://api.github.com/repos/inmagik/newsclouds-stock/contents/' + cloud)
-    return r.status_code == 200
+    # r = requests.get('https://api.github.com/repos/inmagik/newsclouds-stock/contents/' + cloud)
+    # return r.status_code == 200
+    return True
 
 
 @app.route("/")

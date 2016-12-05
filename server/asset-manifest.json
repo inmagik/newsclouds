@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.56948bcd.css",
   "main.css.map": "static/css/main.56948bcd.css.map",
-  "main.js": "static/js/main.0120a929.js",
-  "main.js.map": "static/js/main.0120a929.js.map",
+  "main.js": "static/js/main.362678ec.js",
+  "main.js.map": "static/js/main.362678ec.js.map",
   "static/media/DailyClouds-logo.png": "static/media/DailyClouds-logo.bc6fee3d.png",
   "static/media/Octocat_circle.png": "static/media/Octocat_circle.5671f478.png",
   "static/media/fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
@@ -15,6 +15,7 @@
   "static/media/glyphicons-halflings-regular.ttf": "static/media/glyphicons-halflings-regular.e18bbf61.ttf",
   "static/media/glyphicons-halflings-regular.woff": "static/media/glyphicons-halflings-regular.fa277232.woff",
   "static/media/glyphicons-halflings-regular.woff2": "static/media/glyphicons-halflings-regular.448c34a5.woff2",
+  "static/media/image1.png": "static/media/image1.e419087b.png",
   "static/media/inmagik_circle_shadow.png": "static/media/inmagik_circle_shadow.c119f0bc.png",
   "static/media/ionicons.eot?v=3.0.0-alpha.3": "static/media/ionicons.bdf1d306.eot",
   "static/media/ionicons.svg?v=3.0.0-alpha.3": "static/media/ionicons.d9496a23.svg",

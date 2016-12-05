@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "fs-extra": "^1.0.0",
     "jsdom": "^9.8.3",
-    "ncp": "^2.0.0",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "build": "react-scripts build",
     "flask": "node bin/flask",
     "build:flask": "npm run build && npm run flask",
+    "deploy": "npm run build:flask && sh ./deploy/deploy.sh",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
