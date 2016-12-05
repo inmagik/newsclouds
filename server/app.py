@@ -3,15 +3,20 @@ from flask import (
     Flask, render_template, redirect, url_for,
     request, send_from_directory
 )
-import locale
+import arrow
 import requests
 
 app = Flask(__name__)
 
-# From cloud string as 20161128 to localized formatted data
-def cloud_date(cloud, date_format = "{d.day} {d:%B} {d:%Y}", locale_code = "EN_us"):
-    locale.setlocale(locale.LC_TIME, locale_code)
-    return date_format.format(d=datetime.strptime(cloud, '%Y%m%d'))
+
+def is_valid_cloud(cloud):
+    """
+    Check if given cloud is valid
+    """
+    # TODO: Cache it!
+    r = requests.get('https://api.github.com/repos/inmagik/newsclouds-stock/contents/' + cloud)
+    return r.status_code == 200
+
 
 @app.route("/")
 def index():
@@ -23,21 +28,21 @@ def project():
 
 @app.route("/clouds/<cloud>")
 def wordcloud(cloud):
-    # TODO: Cache it!
-    r = requests.get('https://api.github.com/repos/inmagik/newsclouds-stock/contents/' + cloud)
+    try:
+        arw = arrow.get(cloud, 'YYYYMMDD')
+    except:
+        # Invalid format so invalid cloud
+        return redirect(url_for("index"))
 
-    if r.status_code == 404:
+    if (not is_valid_cloud(cloud)):
         # Invalid cloud
         return redirect(url_for("index"))
-    elif r.status_code != 200:
-        # Impossible but, in case of Github was down eheh
-        return 'Unable to contact clouds API', 500
 
     # Build meta tags for socials
     url = request.url
     image = "http://inmagik.github.io/newsclouds-stock/%s/%s.image.png" % (cloud, cloud)
-    date_it = cloud_date(cloud, locale_code="IT_it")
-    date_en = cloud_date(cloud, locale_code="EN_us", date_format="{d:%B}, {d.day}, {d:%Y}")
+    date_en = arw.format('MMMM, D, YYYY', locale='en')
+    date_it = ' '.join([c.capitalize() for c in arw.format('D MMMM YYYY', locale='it').split(' ')])
 
     return render_template("cloud.html", image=image, date_en=date_en, date_it=date_it, url=url)
 
