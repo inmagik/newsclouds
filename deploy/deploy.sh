@@ -1,2 +1,3 @@
 #!/bin/bash
-ansible-playbook deploy.yml -i hosts --user root -vvvv
+BASEDIR=$(dirname "$0")
+ansible-playbook $BASEDIR/deploy.yml -i $BASEDIR/hosts --user root -vvvv
