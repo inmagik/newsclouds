@@ -6,7 +6,7 @@ import logo from './DailyClouds-logo.png'
 const Header = () => (
   <div className="Header row">
    <div className="col-md-8 col-md-offset-2">
-     <img className="Header-logo" src={logo}/>
+     <img className="HeaderLogo" src={logo} />
      <ul className="Header-navbar-menu">
      <li><Link to='/'>DailyClouds</Link></li>
      <li><a href="https://github.com/inmagik/newswordclouds-app">Repo</a></li>
