@@ -1,13 +1,3 @@
-import React from 'react'
-import Header from './Header'
-import Footer from './Footer'
-
-export const Layout = ({ children }) => (
-  <div>
-    <Header />
-    <div>{children}</div>
-    <Footer />
-  </div>
-)
+import Layout from './Layout'
 
 export default Layout

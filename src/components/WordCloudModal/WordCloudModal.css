@@ -27,6 +27,7 @@
   overflow: auto;
   position: relative;
 }
+
  @media (max-width: 800px) {
    .WordCloudModal-content {
      background-color: #fff;
@@ -37,8 +38,9 @@
      display: block;
      overflow: auto;
      height: 100%;
+     padding-left: 2rem;
+     padding-right: 2rem;
    }
-
  }
 
 .WordCloudModal-image {
@@ -72,7 +74,7 @@
 
 .WordCloudModal-arrow-left {
   position: absolute;
-  top:50%;
+  top:calc(50% - 17px);
   left:50px;
   z-index: 10000000;
   color: white;
@@ -81,14 +83,13 @@
 
 @media (max-width: 800px) {
   .WordCloudModal-arrow-left {
-    top: 300px;
-    left: 15px;
+    left: 20px;
   }
 }
 
 .WordCloudModal-arrow-right {
   position: absolute;
-  top:50%;
+  top:calc(50% - 17px);
   right:50px;
   z-index: 10000000;
   color: #fff;
@@ -97,10 +98,10 @@
 
 @media (max-width: 800px) {
   .WordCloudModal-arrow-right {
-    top: 300px;
-    right: 15px;
+    right: 20px;
   }
 }
+
 
 .WordCloudModal-arrow-right:hover,
 .WordCloudModal-arrow-right:focus {

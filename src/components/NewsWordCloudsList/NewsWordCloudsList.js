@@ -90,7 +90,7 @@ export default class NewsWordCloudsList extends Component {
 
         <div className="row">
           {wordCloudsList && wordCloudsList.map(wordCloud => (
-            <div className="col-md-6" key={wordCloud.name}>
+            <div className="col-sm-6" key={wordCloud.name}>
               <WordCloudPreview wordCloud={wordCloud} />
             </div>
           ))}

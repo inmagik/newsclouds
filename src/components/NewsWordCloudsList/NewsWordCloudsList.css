@@ -1,1 +1,5 @@
-
+@media (max-width: 800px) {
+  .NewsWordCloudsList {
+    margin: auto;
+  }
+}

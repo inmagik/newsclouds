@@ -21,7 +21,7 @@ const Project = () => (
        </div>
        <h4 className="project-title">>RSS Feeds - Giornali italiani</h4>
        <p>Questi sono i link dei feeds RSS dei giornali italiani utilizzati nel progetto DailyClouds. Abbiamo scelto i quotidiani con maggior tiraratura a livello nazionale. Purtroppo sono esclusi dal nostro progetto le testate gionalistiche che non usano RSS feeds.</p>
-       <ul>
+       <ul className="Project-feeds-list">
          <li><a href="http://www.ansa.it/main/notizie/awnplus/topnews/synd/ansait_awnplus_topnews_medsynd_Today_Idx.xml">ANSA</a></li>
          <li><a href="http://www.repubblica.it/rss/homepage/rss2.0.xml">la Repubblica</a></li>
          <li><a href="http://xml.corriereobjects.it/rss/homepage.xml">Corriere della Sera</a></li>

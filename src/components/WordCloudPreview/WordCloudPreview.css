@@ -3,8 +3,16 @@
 }
 
 .WordCloudPreview img {
-  max-height: 350px;
-  /*height: auto;*/
+  max-width: 100%;
+  display: inline-block;
+  height: auto;
+  padding: 30px;
+}
+
+@media (min-width: 994px) {
+  .WordCloudPreview img {
+    padding: 60px;
+  }
 }
 
 .WordCloudPreview-bottom-text {

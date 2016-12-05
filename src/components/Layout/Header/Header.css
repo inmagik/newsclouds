@@ -1,5 +1,5 @@
 .Header {
-   margin-bottom: 50px;
+   margin-bottom: 10px;
 }
 
 .HeaderLogo {
@@ -26,4 +26,30 @@
   text-decoration: none;
   line-height: 45px;
   color: #666666;
+}
+
+@media (max-width: 800px) {
+  .Header-navbar-menu li {
+    padding-left: 5px;
+
+  }
+}
+
+@media (max-width: 500px) {
+  .HeaderLogo {
+    float: none;
+    text-align: center;
+    padding: 0px;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Header-navbar-menu li {
+    float: none;
+    text-align: center;
+    list-style-position: inside;
+    display: block;
+    width: 60px;
+  }
 }

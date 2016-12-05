@@ -2,9 +2,14 @@
   text-align: left;
 }
 
+@media (max-width: 800px) {
+  .project-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
 .project-title {
   color: deepskyblue;
-  padding-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -16,4 +21,23 @@
   padding-top: 30px;
   padding-bottom: 30px;
   width: 70%;
+}
+
+/* RSS feeds list */
+.Project-feeds-list {
+  list-style: none;
+  padding: 0;
+}
+
+.Project-feeds-list li {
+  padding-left: 1.3em;
+}
+
+.Project-feeds-list li:before {
+  content: "\f00c"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+  color: deepskyblue;
 }
