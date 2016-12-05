@@ -14,43 +14,17 @@ const dataReducer = contents => contents.reduce((data, content) => ({
 
 const loadWordClouds = () => fetch(API_URL)
   .then(response => response.json())
-  // Map to word cloud object
-  .then(contents => contents.map(({ name }) => ({
-    name,
-    date: moment(name, 'YYYYMMDD'),
-    image: `${CONTENT_URL}/${name}/${name}.image.png`,
-    txt: `${CONTENT_URL}/${name}/newstext.txt`
-    // previewImage,
-  }))
-    // Fake word clouds...
-    // .concat([
-    //   {
-    //     name: 'GioVaahaha',
-    //     image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-    //     txt: '/n.txt'
-    //     // txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-    //   },
-      // {
-      //   name: 'GioVauwwuuw',
-      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      // },
-      // {
-      //   name: 'GioVaxxx',
-      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      // },
-      // {
-      //   name: 'GioVa',
-      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      // },
-      // {
-      //   name: 'INGE',
-      //   image: 'https://scontent-mxp1-1.xx.fbcdn.net/t31.0-8/15000278_10209856039951648_8930327605559385382_o.jpg',
-      //   txt: `${RAW_GIT_URL}/xxx/newstext.txt`
-      // }
-    // ])
+  .then(contents => contents
+    // From newest to oldest
+    .sort((a, b) => Number(b.name) - Number(a.name))
+    // Map to word cloud object
+    .map(({ name }) => ({
+      name,
+      date: moment(name, 'YYYYMMDD'),
+      image: `${CONTENT_URL}/${name}/${name}.image.png`,
+      txt: `${CONTENT_URL}/${name}/newstext.txt`
+      // previewImage,
+    }))
   )
   // Flatty data structure
   .then(contents => ({
