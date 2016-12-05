@@ -1,0 +1,19 @@
+.project-content {
+  text-align: left;
+}
+
+.project-title {
+  color: deepskyblue;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.Project-image-div {
+  text-align: center;
+}
+
+.Project-image {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 70%;
+}
