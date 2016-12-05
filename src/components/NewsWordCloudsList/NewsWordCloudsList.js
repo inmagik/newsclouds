@@ -5,7 +5,7 @@ import moment from 'moment'
 import './NewsWordCloudsList.css'
 
 const API_URL = 'https://api.github.com/repos/inmagik/newsclouds-stock/contents'
-const CONTENT_URL = 'http://inmagik.github.io/newsclouds-stock'
+const CONTENT_URL = 'https://inmagik.github.io/newsclouds-stock'
 
 const dataReducer = contents => contents.reduce((data, content) => ({
   ...data,

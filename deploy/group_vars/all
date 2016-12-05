@@ -3,7 +3,7 @@ APP_NAME: "dailyclouds"
 GIT_REPO: "https://github.com/inmagik/newsclouds"
 
 #APP_DOMAIN: "dailyclouds.inmagik.com"
-APP_DOMAIN: "178.62.218.119"
+APP_DOMAIN: "dailyclouds.inmagik.com"
 
 BASE_FOLDER : "/srv"
 
