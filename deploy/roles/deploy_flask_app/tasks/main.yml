@@ -1,28 +1,28 @@
 ---
 
 - name: template nginx
-  template: src=nginx.conf dest=/etc/nginx/sites-enabled/{{APP_NAME}}.conf
+  template: src=nginx.conf dest=/etc/nginx/sites-enabled/{{ APP_NAME }}.conf
 
-# - name: template uwsgi.ini
-#   template: src=uwsgi.ini dest={{APP_UWSGI_INI_PATH}}
+- name: template uwsgi.ini
+  template: src=uwsgi.ini dest={{ APP_UWSGI_INI_PATH }}
 
-# - name: template supervisor
-#   template: src=supervisor.conf dest=/etc/supervisor/conf.d/{{APP_NAME}}.conf
+- name: template supervisor
+  template: src=supervisor.conf dest=/etc/supervisor/conf.d/{{ APP_NAME }}.conf
 
 - name: clone repo
-  git: repo={{GIT_REPO}} dest={{APP_BASE_FOLDER}}/code force=true accept_hostkey=yes
+  git: repo={{ GIT_REPO }} dest={{ APP_BASE_FOLDER }} force=true accept_hostkey=yes
 
 - name: setup virtualenv
-  pip: requirements={{APP_BASE_FOLDER}}/code/requirements.txt virtualenv={{APP_VENV_PATH}}
+  pip: requirements={{ APP_BASE_FOLDER }}/requirements.txt virtualenv={{ APP_VENV_PATH }}
 
-# - name: supervisor restart
-#   service: name=supervisor state=started
-#
-# - name: supervisorctl present
-#   supervisorctl: name={{ APP_NAME }} state=present
-#
-# - name: supervisorctl present
-#   supervisorctl: name={{ APP_NAME }} state=restarted
-#
-# - name: restart nginx
-#   service: name=nginx state=restarted
+- name: supervisor restart
+  service: name=supervisor state=started
+
+- name: supervisorctl present
+  supervisorctl: name={{ APP_NAME }} state=present
+
+- name: supervisorctl present
+  supervisorctl: name={{ APP_NAME }} state=restarted
+
+- name: restart nginx
+  service: name=nginx state=restarted

@@ -6,7 +6,7 @@ var fs = require('fs');
 
 // TODO: Check for ./buil/index.html...
 jsdom.env('./build/index.html', function (err, window) {
-  // Build app.html base jinja template
+  // Build base.html base jinja template
 
   // Build the jinja head
   var $head = window.document.head;
@@ -26,11 +26,15 @@ jsdom.env('./build/index.html', function (err, window) {
                   + '{% block scripts %}' + rawScripts + '{% endblock %}';
 
   // All document as string
-  var rawHtml = window.document.documentElement.outerHTML;
+  var rawHtml = jsdom.serializeDocument(window.document);
 
-  // Write app html
+  // Write base html
   fs.writeFile('./server/templates/base.html', rawHtml);
 
   // Copy static
   ncp('./build/static', './server/static');
+
+  // Copy favicon and manifest
+  ncp('./build/favicon.ico', './server/favicon.ico');
+  ncp('./build/asset-manifest.json', './server/asset-manifest.json');
 });
