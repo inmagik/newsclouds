@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 var jsdom = require('jsdom');
-var ncp = require('ncp').ncp;
-var fs = require('fs');
+var fs = require('fs-extra');
+
+var noop = function() {};
 
 // TODO: Check for ./buil/index.html...
 jsdom.env('./build/index.html', function (err, window) {
@@ -32,9 +33,10 @@ jsdom.env('./build/index.html', function (err, window) {
   fs.writeFile('./server/templates/base.html', rawHtml);
 
   // Copy static
-  ncp('./build/static', './server/static');
+  fs.emptyDirSync('./server/static');
+  fs.copySync('./build/static', './server/static');
 
   // Copy favicon and manifest
-  ncp('./build/favicon.ico', './server/favicon.ico');
-  ncp('./build/asset-manifest.json', './server/asset-manifest.json');
+  fs.copySync('./build/favicon.ico', './server/favicon.ico');
+  fs.copySync('./build/asset-manifest.json', './server/asset-manifest.json');
 });
