@@ -1,3 +1,7 @@
 .Layout .container {
   max-width: 100%;
 }
+
+.Layout-content {
+  min-height: 600px;
+}

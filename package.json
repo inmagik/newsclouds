@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "flask": "node bin/flask",
     "build:flask": "npm run build && npm run flask",
-    "deploy": "npm run build:flask && sh ./deploy/deploy.sh",
+    "deploy": "sh ./deploy/deploy.sh",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
