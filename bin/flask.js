@@ -13,7 +13,18 @@ jsdom.env('./build/index.html', function (err, window) {
   var $head = window.document.head;
   var $title = $head.getElementsByTagName('title')[0];
   $title.innerHTML = '{% block title %}{% endblock %}';
-  $head.innerHTML = '{% block head %}' + $head.innerHTML + '{% endblock %}';
+  $head.innerHTML = '{% block head %}' + $head.innerHTML + `
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@inmagiklabs" />
+  <meta name="twitter:title" content="Daily Clouds by INMAGIK" />
+  <meta name="twitter:description" content="#dailyclouds: #news from top #italian newspapers in a #wordcloud by @inmagiklabs" />
+  <meta name="twitter:image" content="%PUBLIC_URL%/inmagik.png" />
+  <meta property="og:url" content="https://dailyclouds.inmagik.com" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="DailyClouds by INMAGIK" />
+  <meta property="og:description" content="Daily Clouds: Le notizie di oggi dei principali giornali italiani in una #wordcloud" />
+  <meta property="og:image" content="%PUBLIC_URL%/inmagik.png" />
+  ` +'{% endblock %}';
 
   // Build the jinja body
   var $body = window.document.body;
