@@ -51,5 +51,6 @@ jsdom.env('./build/index.html', function (err, window) {
 
   // Copy favicon and manifest
   fs.copySync('./build/favicon.ico', './server/favicon.ico');
+  fs.copySync('./build/inmagik.png', './server/inmagik.png');
   fs.copySync('./build/asset-manifest.json', './server/asset-manifest.json');
 });
