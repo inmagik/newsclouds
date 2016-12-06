@@ -74,13 +74,20 @@ export default class WordCloudModal extends Component {
                       {nextWordCloud && <Link className="WordCloudModal-arrow-right" to={`/clouds/${nextWordCloud.name}`}>
                           <h3><i className="fa fa-chevron-right"/></h3>
                       </Link>}
-                    {/* 
+
                     <div className="SocialButtons">
-                        <button><i className="fa fa-twitter"/></button>
-                        <button><i className="fa fa-facebook"/></button>
-                        <button><i className="fa fa-cloud-download"/></button>
+                        <button><a href={wordCloud.image} download><i className="fa fa-cloud-download"></i></a></button>
+                        <button>
+                          <a href={`https://www.facebook.com/sharer/sharer.php?u=${window.location}`} target="_blank">
+                            <i className="fa fa-facebook"/>
+                          </a></button>
+                        <button>
+                        <a href={`https://twitter.com/home?status=${window.location}`} target="_blank">
+                          <i className="fa fa-twitter"/>
+                        </a></button>
+
                     </div>
-                    */}
+
                     </div>
                 </div>
             </div>

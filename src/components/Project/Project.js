@@ -7,7 +7,7 @@ import project from './project.png'
 const Project = () => (
   <div className="row project-content">
     <div className="col-md-8 col-md-offset-2">
-       <h4 className="project-title">>Il Projetto <strong>DailyClouds</strong></h4>
+       <h4 className="project-title">Il Progetto <strong>DailyClouds</strong></h4>
        <p>Il cuore del progetto è lo script Python <a href="https://github.com/inmagik/newsclouds-engine">newsclouds-engine</a> che, dato un testo, lo analizza, estrae le parole con maggior ricorrenza e genera un immagine vettoriale dove le parole più grandi sono quelle più ricorrenti. Quest'immagine viene configurata tramite un <a href="https://it.wikipedia.org/wiki/JavaScript_Object_Notation">file json</a> nel quale vengono specificati  colore e font.<br />
        Abbiamo pensato di utilizzare questo script Python per creare quotidianamente un'immagine che mostri le parole più usate nelle prime pagine delle maggiori testate giornalistiche italiane. Per fare ciò, abbiamo dato come input al nostro newsclouds-engine il testo generato dai feeds <a href="https://it.wikipedia.org/wiki/RSS">RSS</a> dei siti web dei maggiori giornali italiani.
        </p>
@@ -19,8 +19,8 @@ const Project = () => (
        <div className="Project-image-div">
          <img src={project} className="Project-image"/>
        </div>
-       <h4 className="project-title">>RSS Feeds - Giornali italiani</h4>
-       <p>Questi sono i link dei feeds RSS dei giornali italiani utilizzati nel progetto DailyClouds. Abbiamo scelto i quotidiani con maggior tiraratura a livello nazionale. Purtroppo sono esclusi dal nostro progetto le testate gionalistiche che non usano RSS feeds.</p>
+       <h4 className="project-title">RSS Feeds - Giornali italiani</h4>
+       <p>Questi sono i link dei feeds RSS dei giornali italiani utilizzati nel progetto DailyClouds. Utilizziamo le testate gionalistiche che non i feeds RSS.</p>
        <ul className="Project-feeds-list">
          <li><a href="http://www.ansa.it/main/notizie/awnplus/topnews/synd/ansait_awnplus_topnews_medsynd_Today_Idx.xml">ANSA</a></li>
          <li><a href="http://www.repubblica.it/rss/homepage/rss2.0.xml">la Repubblica</a></li>
