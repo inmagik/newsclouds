@@ -9,8 +9,10 @@ const Header = () => (
      <img className="HeaderLogo" src={logo} />
      <ul className="Header-navbar-menu">
      <li><Link to='/'>DailyClouds</Link></li>
-     <li><a href="https://github.com/inmagik/newswordclouds-app">Repo</a></li>
      <li><Link to='/project'>Project</Link></li>
+     {/*
+     <li><a href="https://github.com/inmagik/newswordclouds-app" target="_blank">Github</a></li>
+     */}
      </ul>
    </div>
   </div>
