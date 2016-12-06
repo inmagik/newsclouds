@@ -11,10 +11,10 @@ const Project = () => (
        <p>
        <b>DailyClouds</b> pubblica ogni giorno un'immagine che mostra le parole più usate
        nelle notizie pubblicate dalle maggiori testate giornalistiche italiane,
-       utilizzando il testo contenuto nei feeds <a href="https://it.wikipedia.org/wiki/RSS">RSS</a> dei siti web dei maggiori giornali italiani.
+       utilizzando il testo contenuto nei feeds <a target="_blank" href="https://it.wikipedia.org/wiki/RSS">RSS</a>.
        </p>
        <p>
-       Il progetto è basato su uno script Python, <a href="https://github.com/inmagik/newsclouds-engine">newsclouds-engine</a>, che,
+       Il progetto è basato su uno script Python, <a target="_blank" href="https://github.com/inmagik/newsclouds-engine">newsclouds-engine</a>, che,
        dato un testo, lo analizza, estrae le parole con maggior ricorrenza e genera un'immagine dove le parole più grandi sono quelle più ricorrenti.
        {/*
        Quest'immagine viene configurata tramite un <a href="https://it.wikipedia.org/wiki/JavaScript_Object_Notation">file json</a> nel quale vengono specificati  colore e font.<br />
@@ -25,11 +25,11 @@ const Project = () => (
        <div className="Project-image-div">
          <img src={image1} className="Project-image"/>
        </div>
-       <p>Ogni giorno generiamo una cloud con un <a href="https://it.wikipedia.org/wiki/Raspberry_Pi">Raspberry pi</a>,
+       <p>Ogni giorno generiamo una cloud con un <a target="_blank" href="https://it.wikipedia.org/wiki/Raspberry_Pi">Raspberry pi</a>,
        dalla nostra sede operativa a Bergamo,
-       che salva le immagini sul repository github <a href="https://github.com/inmagik/newsclouds-stock">newsclouds-stock</a>.
+       che salva le immagini sul repository github <a target="_blank" href="https://github.com/inmagik/newsclouds-stock">newsclouds-stock</a>.
        </p>
-       <p>Questo sito, la web-app DailyClouds, realizzata con <a href="https://facebook.github.io/react/">React.js</a>,
+       <p>Questo sito, la web-app DailyClouds, realizzata con <a target="_blank" href="https://facebook.github.io/react/">React.js</a>,
          visualizza le immagini salvate sul repository github newsclouds-stock.</p>
        <div className="Project-image-div">
          <img src={project} className="Project-image"/>
