@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.2aec2859.css",
-  "main.css.map": "static/css/main.2aec2859.css.map",
-  "main.js": "static/js/main.b67fcfad.js",
-  "main.js.map": "static/js/main.b67fcfad.js.map",
+  "main.css": "static/css/main.6a81da6a.css",
+  "main.css.map": "static/css/main.6a81da6a.css.map",
+  "main.js": "static/js/main.c496ac74.js",
+  "main.js.map": "static/js/main.c496ac74.js.map",
   "static/media/DailyClouds-logo.png": "static/media/DailyClouds-logo.bc6fee3d.png",
   "static/media/Octocat_circle.png": "static/media/Octocat_circle.5671f478.png",
   "static/media/fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
@@ -22,6 +22,5 @@
   "static/media/ionicons.ttf?v=3.0.0-alpha.3": "static/media/ionicons.74c65267.ttf",
   "static/media/ionicons.woff2?v=3.0.0-alpha.3": "static/media/ionicons.311d8196.woff2",
   "static/media/ionicons.woff?v=3.0.0-alpha.3": "static/media/ionicons.81414686.woff",
-  "static/media/paper.jpg": "static/media/paper.2fc15c23.jpg",
   "static/media/project.png": "static/media/project.761e8aff.png"
 }
