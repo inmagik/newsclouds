@@ -9,43 +9,62 @@
   height: 100%;
   overflow: auto;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.92);
 }
 
 .WordCloudModal-content {
   margin: auto;
   padding: 0px;
   width: 650px;
-  max-height: 100%;
   text-align: center;
   position: relative;
+  height: 90% !important;
 }
 
  @media (max-width: 650px) {
    .WordCloudModal-content {
      width: 100%;
-     height: auto;
-     text-align: center;
+     height: 100%;
    }
  }
+
+
+
+.modal-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.modal-middle {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  bottom: 40px;
+}
+
+
 
 .Modal-image {
   position: relative;
   float: none;
   overflow: auto;
+  height: 100%;
+  width: auto;
 }
 
 
 .WordCloudModal-arrow-left {
   position: absolute;
   top:calc(50% - 17px);
-  left:40px;
+  left: -40px;
   z-index: 10000000;
   color: white;
   font-size: 40px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 740px) {
   .WordCloudModal-arrow-left {
     left: 20px;
   }
@@ -54,13 +73,13 @@
 .WordCloudModal-arrow-right {
   position: absolute;
   top:calc(50% - 17px);
-  right:40px;
+  right: -40px;
   z-index: 10000000;
   color: #fff;
   font-size: 40px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 740px) {
   .WordCloudModal-arrow-right {
     right: 20px;
   }
@@ -76,6 +95,7 @@
 .WordCloudModal-arrow-left:focus {
   color: #c3c3c3;
 }
+
 
 /* The Close Button */
 .CloseButton {
@@ -104,7 +124,6 @@
   padding: 0px;
   margin: 10px;
   z-index: 100000;
-  position: absolute;
   top: 4px;
   left: 85px;
 }
@@ -138,11 +157,22 @@
 
 .SocialButtons {
   font-size: 15px;
-  bottom: 5px;
-  width: 100%;
+  width: 50px;
   z-index: 100000;
-  position: absolute;
+  position: fixed;
+  right: 20px;
+  top: 60px;
 }
+
+@media (max-width: 600px){
+  .SocialButtons {
+    position: relative;
+    right: 0px;
+    top: 90%;
+    width: 100%;
+  }
+}
+
 
 .SocialButtons button:hover,
 .SocialButtons button:focus {
@@ -163,6 +193,7 @@
    height: 40px;
    width: auto;
    z-index: 1000000;
-   margin: 10px;
-   left: 40px;
+   margin: 0px;
+   left: 2px;
+   bottom: 2px;
  }
