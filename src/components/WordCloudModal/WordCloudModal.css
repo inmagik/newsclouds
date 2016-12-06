@@ -13,69 +13,33 @@
 }
 
 .WordCloudModal-content {
-  background: url('./paper.jpg');
-  background-repeat: repeat;
-  background-color: #fff;
   margin: auto;
   padding: 0px;
-  border: 1px solid #000;
   width: 650px;
-  height: 100%;
   max-height: 100%;
   text-align: center;
-  display: block;
-  overflow: auto;
   position: relative;
 }
 
- @media (max-width: 800px) {
+ @media (max-width: 650px) {
    .WordCloudModal-content {
-     background-color: #fff;
-     margin: auto;
-     border: 1px solid #000;
      width: 100%;
+     height: auto;
      text-align: center;
-     display: block;
-     overflow: auto;
-     height: 100%;
-     padding-left: 2rem;
-     padding-right: 2rem;
    }
  }
 
-.WordCloudModal-image {
-  position: absolute;
-  top:100px;
-  bottom: 30px;
-  width:100%;
-  margin: 0 auto;
+.Modal-image {
+  position: relative;
+  float: none;
+  overflow: auto;
 }
 
-.WordCloudModal-image img{
-  max-height: 100%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
-
-@media (max-width: 800px) {
-   .WordCloudModal-image img{
-     padding: 5px;
-     margin: auto;
-   }
-}
-
-@media (max-width: 800px) {
-   .WordCloudModal-image {
-     position: relative;
-     top: 3%;
-   }
-}
 
 .WordCloudModal-arrow-left {
   position: absolute;
   top:calc(50% - 17px);
-  left:50px;
+  left:40px;
   z-index: 10000000;
   color: white;
   font-size: 40px;
@@ -90,7 +54,7 @@
 .WordCloudModal-arrow-right {
   position: absolute;
   top:calc(50% - 17px);
-  right:50px;
+  right:40px;
   z-index: 10000000;
   color: #fff;
   font-size: 40px;
@@ -115,10 +79,14 @@
 
 /* The Close Button */
 .CloseButton {
-  float: right;
-  font-size: large;
-  color: #000;
-  top: 0;
+  font-size: 30px;;
+  color: #fff;
+  top: 1px;
+  right: 3px;
+  z-index: 100000;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
 }
 
 .CloseButton:hover,
@@ -128,18 +96,22 @@
     cursor: pointer;
 }
 
+.CloseButton i {
+  color: #fff;
+}
 .ModalTitle {
-  font-family: 'Rye', cursive;
-  border-bottom: 4px double #000;
+  color: #fff;
   padding: 0px;
-  margin: 0px;
-  font-size: 40px;
-  font-weight: 900;
+  margin: 10px;
+  z-index: 100000;
+  position: absolute;
+  top: 4px;
+  left: 85px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px){
   .ModalTitle {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
 
@@ -157,9 +129,16 @@
   box-shadow: 3px 3px 5px #5f5f5f;
 }
 
+@media (max-width: 500px) {
+  .SocialButtons button {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 .SocialButtons {
   font-size: 15px;
-  bottom: 50px;
+  bottom: 5px;
   width: 100%;
   z-index: 100000;
   position: absolute;
@@ -171,17 +150,19 @@
   background-color: #737373;
 }
 
- .WordCloudModal-Logo {
-   left: 0;
+ .ModalLogo-DailyClouds {
+   position: absolute;
    height: 40px;
    width: auto;
+   z-index: 1000000;
+   margin: 10px;
  }
 
- .ModalHeader {
-   width: 100%;
-   padding: 5px;
+ .ModalLogo-inmagik {
+   position: absolute;
+   height: 40px;
+   width: auto;
+   z-index: 1000000;
+   margin: 10px;
+   left: 40px;
  }
-
-.clearfix {
-  width: 100%;
-}
