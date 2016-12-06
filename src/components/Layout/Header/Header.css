@@ -11,6 +11,7 @@
 
 .Header-navbar-menu {
   list-style: none;
+  padding: 0px!important;
 }
 
 .Header-navbar-menu li {
@@ -19,6 +20,10 @@
   padding-top: 25px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.Header-navbar-menu li.inmagik {
+  float:right;
 }
 
 .Header-navbar-menu li a {
@@ -31,7 +36,6 @@
 @media (max-width: 800px) {
   .Header-navbar-menu li {
     padding-left: 5px;
-
   }
 }
 
@@ -50,6 +54,17 @@
     text-align: center;
     list-style-position: inside;
     display: block;
-    width: 60px;
+    padding-left: 0px;
+  }
+
+  .Header-navbar-menu li.inmagik {
+    float:none;
+  }
+
+  .Header-navbar-menu li a {
+    display:block;
+    text-decoration: none;
+    line-height: 24px;
+    color: #666666;
   }
 }

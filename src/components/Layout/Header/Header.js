@@ -10,6 +10,7 @@ const Header = () => (
      <ul className="Header-navbar-menu">
      <li><Link to='/'>DailyClouds</Link></li>
      <li><Link to='/project'>Il progetto</Link></li>
+     <li className="inmagik"><a target="_blank" href='https://www.inmagik.com'>by INMAGIK</a></li>
      {/*
      <li><a href="https://github.com/inmagik/newswordclouds-app" target="_blank">Github</a></li>
      */}
