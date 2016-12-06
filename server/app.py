@@ -48,6 +48,7 @@ def wordcloud(cloud):
     return render_template("cloud.html", image=image, date_en=date_en, date_it=date_it, url=url)
 
 @app.route('/favicon.ico')
+@app.route('/inmagik.png')
 @app.route('/asset-manifest.json')
 def static_from_root():
     return send_from_directory('', request.path[1:])
