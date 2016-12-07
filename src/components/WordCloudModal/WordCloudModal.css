@@ -23,13 +23,18 @@
 }
 
 .Modal-image {
-
+  position: relative;
   float: none;
   overflow: auto;
   margin-left:20px;
   width: 610px;
-  height: auto;
+  margin: auto;
+}
 
+@media (min-width: 650px) {
+  .img-responsive {
+    height: 100%!important;
+  }
 }
 
 .ModalTitle {
@@ -74,15 +79,6 @@
      background-color: #000;
    }
 
-   .Modal-image {
-     position: relative;
-     float: none;
-     overflow: auto;
-     width: 100%;
-     height: auto!important;
-     margin: auto;
-   }
-
    .ModalTitle {
      color: #fff;
    }
@@ -106,11 +102,6 @@
   width: 100%;
   bottom: 40px;
 }
-
-
-
-
-
 
 .WordCloudModal-arrow-left {
   position: absolute;

@@ -45,23 +45,6 @@ export default class WordCloudModal extends Component {
         return (
             <div className="WordCloudModal">
                 <div className="WordCloudModal-content">
-                    {/*<img src={inmagik} className="ModalLogo-inmagik pull-left"/>
-                    <h3 className="CloseButton"><Link to='/'><i className="fa fa-close"/></Link></h3>
-                    <h3 className="ModalTitle">{formatDate(wordCloud.date)}</h3>
-                    <img width="100%" src={wordCloud.image} className="Modal-image"/>
-                    {prevWordCloud && <Link className="WordCloudModal-arrow-left" to={`/clouds/${prevWordCloud.name}`}>
-                        <h3><i className="fa fa-chevron-left"/></h3>
-                    </Link>}
-                    {nextWordCloud && <Link className="WordCloudModal-arrow-right" to={`/clouds/${nextWordCloud.name}`}>
-                        <h3><i className="fa fa-chevron-right"/></h3>
-                    </Link>}
-                    <div className="SocialButtons">
-                        <button><i className="fa fa-twitter"/></button>
-                        <button><i className="fa fa-facebook"/></button>
-                        <button><i className="fa fa-cloud-download"/></button>
-                    </div>
-
-                    */}
                     <div className="modal-top">
                       <h3 className="CloseButton"><Link to='/'><i className="fa fa-close"/></Link></h3>
                       <h3 className="ModalTitle">{formatDate(wordCloud.date)}</h3>
