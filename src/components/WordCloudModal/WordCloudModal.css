@@ -1,5 +1,4 @@
-
-
+/* modal background */
 .WordCloudModal {
   position: fixed;
   z-index: 1;
@@ -12,6 +11,7 @@
   background-color: rgba(0,0,0,0.80);
 }
 
+/* modal content */
 .WordCloudModal-content {
   margin: auto;
   margin-top:20px;
@@ -22,6 +22,16 @@
   background-color: #fff;
 }
 
+@media (max-width: 650px) {
+  .WordCloudModal-content {
+    width: 100%;
+    height: 100% !important;
+    padding:0px;
+    background-color: #000;
+  }
+}
+
+/* dailyclouds image */
 .Modal-image {
   position: relative;
   float: none;
@@ -37,6 +47,7 @@
   }
 }
 
+/* modal title (date) */
 .ModalTitle {
   color: #222;
   padding: 0px;
@@ -44,6 +55,18 @@
   z-index: 100000;
   top: 4px;
   left: 85px;
+}
+
+@media (max-width: 650px){
+  .ModalTitle {
+  color: #fff;
+  }
+}
+
+@media (max-width: 500px){
+  .ModalTitle {
+    font-size: 20px;
+  }
 }
 
 /* The Close Button */
@@ -69,26 +92,13 @@
 .CloseButton i {
   color: #222;
 }
+@media (max-width: 650px) {
+  .CloseButton i {
+    color: #fff;
+  }
+}
 
-
- @media (max-width: 650px) {
-   .WordCloudModal-content {
-     width: 100%;
-     height: 100% !important;
-     padding:0px;
-     background-color: #000;
-   }
-
-   .ModalTitle {
-     color: #fff;
-   }
-
-   .CloseButton i {
-     color: #fff;
-   }
-
- }
-
+/* modal top div */
 .modal-top {
   position: absolute;
   top: 0;
@@ -96,6 +106,7 @@
   height: 40px;
 }
 
+/* modal middle div */
 .modal-middle {
   position: absolute;
   top: 40px;
@@ -103,6 +114,7 @@
   bottom: 40px;
 }
 
+/* arrows buttons */
 .WordCloudModal-arrow-left {
   position: absolute;
   top:calc(50% - 17px);
@@ -146,19 +158,7 @@
   color: #c3c3c3;
 }
 
-
-
-
-@media (max-width: 500px){
-  .ModalTitle {
-    font-size: 20px;
-  }
-}
-
-.ModalDate {
-  padding-left: 10px;
-}
-
+/* social sharing buttons */
 .SocialButtons button {
   height: 40px;
   width: 40px;
@@ -198,21 +198,3 @@
   color: #fff;
   background-color: #737373;
 }
-
- .ModalLogo-DailyClouds {
-   position: absolute;
-   height: 40px;
-   width: auto;
-   z-index: 1000000;
-   margin: 10px;
- }
-
- .ModalLogo-inmagik {
-   position: absolute;
-   height: 40px;
-   width: auto;
-   z-index: 1000000;
-   margin: 0px;
-   left: 2px;
-   bottom: 2px;
- }
